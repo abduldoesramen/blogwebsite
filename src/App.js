@@ -4,11 +4,6 @@ const App = () => {
   return (
     <div>
       <Table />
-      <Table />
-      <Table />
-      <Table />
-      <Table />
-      <Table />
     </div>
   );
 };
