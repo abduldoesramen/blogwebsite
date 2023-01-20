@@ -1,3 +1,5 @@
+import App from "./App.js";
+
 const TableHeader = () => {
   return (
     <thead>
@@ -9,35 +11,29 @@ const TableHeader = () => {
   );
 };
 
-const TableBody = () => {
-  return (
-    <tbody>
-      <tr>
-        <td>Charlie</td>
-        <td>Janitor</td>
+const TableBody = (props) => {
+  const rows = props.characterData.map((row, index) => {
+    return (
+      <tr key={index}>
+        <td>{row.name}</td>
+        <td>{row.job}</td>
       </tr>
-      <tr>
-        <td>Mac</td>
-        <td>Bouncer</td>
-      </tr>
-      <tr>
-        <td>Dee</td>
-        <td>Aspiring actress</td>
-      </tr>
-      <tr>
-        <td>Dennis</td>
-        <td>Bartender</td>
-      </tr>
-    </tbody>
-  );
+    );
+  });
+
+  return <tbody>{rows}</tbody>;
 };
 
-const Table = () => {
+const Table = (props) => {
+  const { characterData } = props;
+
   return (
-    <table>
-      <TableHeader />
-      <TableBody />
-    </table>
+    <div>
+      <table>
+        <TableHeader />
+        <TableBody characterData={characterData} />
+      </table>
+    </div>
   );
 };
 
