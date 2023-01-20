@@ -1,30 +1,33 @@
+import React, { Component } from "react";
 import Table from "./Table";
 
-const characters = [
-  {
-    name: "Charlie",
-    job: "Job",
-  },
-  {
-    name: "Mac",
-    job: "Bouncer",
-  },
-  {
-    name: "Dee",
-    job: "Aspiring actress",
-  },
-  {
-    name: "Dennis",
-    job: "Bartender",
-  },
-];
+class App extends Component {
+  render() {
+    const characters = [
+      {
+        name: "Charlie",
+        job: "Janitor",
+      },
+      {
+        name: "Mac",
+        job: "Bouncer",
+      },
+      {
+        name: "Dee",
+        job: "Aspiring actress",
+      },
+      {
+        name: "Dennis",
+        job: "Bartender",
+      },
+    ];
 
-const App = () => {
-  return (
-    <div>
-      <Table characterData={characters} />
-    </div>
-  );
-};
+    return (
+      <div className="container">
+        <Table characterData={characters} />
+      </div>
+    );
+  }
+}
 
 export default App;

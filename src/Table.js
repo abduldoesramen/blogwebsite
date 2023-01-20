@@ -1,4 +1,5 @@
 import App from "./App.js";
+import React, { Component } from "react";
 
 const TableHeader = () => {
   return (
@@ -24,17 +25,17 @@ const TableBody = (props) => {
   return <tbody>{rows}</tbody>;
 };
 
-const Table = (props) => {
-  const { characterData } = props;
+class Table extends Component {
+  render() {
+    const { characterData } = this.props;
 
-  return (
-    <div>
+    return (
       <table>
         <TableHeader />
         <TableBody characterData={characterData} />
       </table>
-    </div>
-  );
-};
+    );
+  }
+}
 
 export default Table;
